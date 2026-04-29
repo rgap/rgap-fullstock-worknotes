@@ -1,0 +1,16 @@
+# macos files
+.DS_Store
+
+# all common node.js files
+node_modules
+yarn.lock
+yarn-error.log
+.env
+.env.production
+.env.development
+
+# vscode files
+.vscode
+
+backend.txt
+frontend.txt
