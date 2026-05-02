@@ -89,6 +89,18 @@ Para conectar con la API real, la documentación especifica que debemos reemplaz
 
 ### 3. Analiza la simulación de backend
 
+La carpeta `src/services/` contiene 6 archivos. Cada uno simula una funcionalidad distinta:
+
+| Archivo | Mecanismo de simulación | Notas |
+| ------- | ---------------------- | ----- |
+| `auth.service.ts` | Promesas con `setTimeout` de 1s. Sesión guardada en una cookie (`full-stock-session`) con expiración de 24h. | La contraseña válida para cualquier usuario es siempre `"letmein"` (hardcodeada). No valida la contraseña real al registrarse, la ignora. |
+| `user.service.ts` | Datos en `localStorage` (clave `"users"`). | Incluye una función `findOrCreateGuestUser` que crea un usuario invitado si el email no existe. |
+| `product.service.ts` | Array estático de 23 productos hardcodeados directamente en el archivo. Promesas con `setTimeout` de 500ms. | No hay paginación ni búsqueda. Solo filtra por `categoryId` o busca por `id`. |
+| `category.service.ts` | Array estático de 3 categorías (Polos, Tazas, Stickers) hardcodeadas. Promesas con `setTimeout` de 500ms. | Solo busca por `slug` o devuelve todas. |
+| `cart.service.ts` | Datos persistidos en `localStorage` (clave `"cart"`). Promesas con `setTimeout` de 350ms. | `removeCartItem` es la única función **síncrona** del proyecto (no retorna Promise). |
+| `order.service.ts` | Array en memoria (`const orders: Order[] = []`). Promesas con `setTimeout` de 1s. | El campo `total` siempre se guarda como `0` (hay un comentario `// This should be calculated based on cart items`). Las órdenes se pierden al recargar la página. |
+
+**Patrón común:** Todas las funciones asíncronas usan el mismo patrón `new Promise((resolve) => setTimeout(() => resolve(datos), ms))` para simular la latencia de red. Al integrar la API real, estas funciones serán reemplazadas por llamadas `fetch`.
 
 ### 4. Revisa los contextos globales
 

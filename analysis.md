@@ -2,6 +2,8 @@
 
 FullStock se comporta como una aplicación ecommerce full-stack donde el frontend React funciona como cliente web, consume una API REST del backend Express y el backend accede a PostgreSQL mediante SQL usando el driver `pg`.
 
+**Flujo de datos de alto nivel:**
+
 ```text
 Frontend
 ↓ HTTP / REST
@@ -55,6 +57,8 @@ FullStock
 El frontend de FullStock es una aplicación React con TypeScript y Vite. Usa React Router para navegación, componentes reutilizables para UI, Context API para estado global y servicios para acceder a datos.
 
 En el código pegado, los archivos de `services` todavía muestran datos mock, promesas y `localStorage`; bajo la condición del prompt, esos servicios se interpretan como la capa que consume la API real del backend.
+
+**Flujo de datos en el frontend:**
 
 ```text
 routes / router
@@ -189,6 +193,8 @@ El frontend no sigue Clean Architecture estricta. Más bien mezcla una organizac
 # 3. Backend
 
 El backend de FullStock es una API REST construida con Express, TypeScript y PostgreSQL. Su estructura sí muestra una arquitectura por capas bastante clara.
+
+**Flujo de datos en el backend:**
 
 ```text
 routes
