@@ -1,10 +1,15 @@
 # Issue #N - <Titulo>
 
-## 1. Objetivo del issue
+## Contexto
 
+## Objetivo
 
-## 1. Subtareas
+## Consideraciones
 
-### 1. <Subtarea 1>
+## Modificaciones
 
-### 2. <Subtarea 2>
+## Tareas
+
+### 1. <Tarea 1>
+
+### 2. <Tarea 2>

@@ -18,7 +18,16 @@ Conectar todas las funciones de auth.service.ts con la API real, eliminando la l
 
 - Si es necesario, puedes proponer cambios en el backend para mejorar la integración.
 
-## Archivos modificados
+## Modificaciones
+
+
+
+
+
+
+
+
+**Comandos ejecutados en FRONTEND**
 
 
 
@@ -26,9 +35,45 @@ Conectar todas las funciones de auth.service.ts con la API real, eliminando la l
 
 ### 1. Revisar y documentar las funciones actuales de auth.service.ts.
 
+En FRONTEND.
 
+Este es el function call tree de las que estan dentro.
+
+```text
+login() -- Retorna un new Promise que parece una simulacion de login con password hardcodeado y timeout para simular latencia de red.
+└── setSessionCookie()
+signup() -- Retorna un new Promise que parece una simulacion de registro generando con id aleatorio y solo con el correo actual. No parece guardar el password. Además lo almacena en un atributo users que esta en el local storage.
+└── setSessionCookie()
+logout() -- Solo restaura y elimina una cookie que parece de sesión.
+
+getCurrentUser()
+└── getSessionCookie()
+
+getSessionCookie()
+    (No realiza llamadas internas)
+setSessionCookie()
+    (No realiza llamadas internas)
+```
 
 ### 2. Explorar los endpoints de autenticación en la API y la documentación sobre sus inputs/outputs.
+
+En BACKEND.
+
+Parecen ser estos:
+
+```text
+router.post("/register", authController.register);
+router.post("/login", authController.login);
+router.get("/me", authController.me);
+router.post("/logout", authController.logout);
+```
+
+Parecen completos.
+
+La doc no dice nada acerca de inputs/outputs.
+
+
+
 
 ### 3. Migrar cada función para que utilice la API real.
 
