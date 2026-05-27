@@ -26,7 +26,11 @@ Al integrar la API real, estas funciones serán reemplazadas por llamadas `fetch
 
 ### 4. Revisa los contextos globales
 
+Son estos:
 
+- ThemeProvider
+- AuthProvider
+- CartProvider
 
 ### 5. Identifica componentes reutilizables
 
