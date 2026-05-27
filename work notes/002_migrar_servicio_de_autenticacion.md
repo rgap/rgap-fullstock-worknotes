@@ -72,8 +72,46 @@ Parecen completos.
 
 La doc no dice nada acerca de inputs/outputs.
 
+Entonces los pruebo a mano.
+
+1. Creé un archivo `.env` a partir de `.env.example`.
+
+2. **Comandos ejecutados en BACKEND**
+
+```sh
+npm install
+npm run migrate
+npm run dev
+```
+
+3. Ejecuté el register dentro de `api.rest`
+
+Input:
+
+```text
+Content-Type: application/json
+
+"email": "{{testEmail}}",
+"password": "{{testPassword}}",
+"confirmPassword": "{{testPassword}}"
+```
+
+Output:
+
+```text
+{
+  "data": {
+    "id": 1,
+    "email": "testino@mail.com",
+    "createdAt": "2026-05-27T01:46:13.843Z",
+    "updatedAt": "2026-05-27T01:46:13.843Z"
+  }
+}
+```
 
 
+
+4. 
 
 ### 3. Migrar cada función para que utilice la API real.
 
