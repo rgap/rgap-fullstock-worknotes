@@ -1,10 +1,14 @@
 # Issue #2 - Migrar Servicio de Autenticación
 
-## 1. Objetivo del issue
+## Contexto
+
+El servicio de autenticación fue implementado originalmente para simular el flujo de login, registro y logout sin una API real. Ahora que el equipo ha desarrollado el backend, es momento de migrar este servicio para que interactúe directamente con los endpoints de autenticación.
+
+## Objetivo
 
 Conectar todas las funciones de auth.service.ts con la API real, eliminando la lógica temporal y adaptando el frontend a los flujos y datos que provee el backend.
 
-**Consideraciones**
+## Consideraciones
 
 - Explora los endpoints disponibles en la API para login, registro, logout y recuperación de sesión.
 
@@ -14,9 +18,15 @@ Conectar todas las funciones de auth.service.ts con la API real, eliminando la l
 
 - Si es necesario, puedes proponer cambios en el backend para mejorar la integración.
 
-## 1. Subtareas
+## Archivos modificados
+
+
+
+## Tareas
 
 ### 1. Revisar y documentar las funciones actuales de auth.service.ts.
+
+
 
 ### 2. Explorar los endpoints de autenticación en la API y la documentación sobre sus inputs/outputs.
 

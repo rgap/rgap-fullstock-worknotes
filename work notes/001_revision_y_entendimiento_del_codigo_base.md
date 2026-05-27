@@ -1,14 +1,14 @@
 # Issue #1 - Revisión y Entendimiento del Código Base
 
-## 1. Objetivo del issue
+## Contexto y Objetivo
 
-Obtener una visión general de la arquitectura y estructura del frontend del proyecto FullStock (React + TypeScript + Vite). El objetivo es entender cómo está organizado el código y cómo se simula actualmente el backend (datos, autenticación, carrito), con la finalidad de prepararnos para integrar un backend real mediante una API.
+El proyecto FullStock Frontend fue desarrollado por otro equipo como un MVP (Producto Mínimo Viable) y ahora es responsabilidad de tu equipo completarlo para llevarlo a producción, conectándolo con un backend real. Antes de iniciar la integración, es fundamental revisar y comprender el código base. Esto permitirá identificar la estructura del proyecto, cómo se simulan actualmente las funcionalidades y qué áreas requerirán cambios para la integración con la API.
 
-## 2. Archivos modificados
+## Archivos modificados
 
 Ninguno
 
-## 3. Subtareas
+## Tareas
 
 ### 1. Explora la estructura del proyecto
 
