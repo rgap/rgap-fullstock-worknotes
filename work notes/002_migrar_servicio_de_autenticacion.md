@@ -22,15 +22,6 @@ Conectar todas las funciones de auth.service.ts con la API real, eliminando la l
 
 
 
-
-
-
-
-
-**Comandos ejecutados en FRONTEND**
-
-
-
 ## Tareas
 
 ### 1. Revisar y documentar las funciones actuales de auth.service.ts.
@@ -64,8 +55,8 @@ Parecen ser estos:
 ```text
 router.post("/register", authController.register);
 router.post("/login", authController.login);
-router.get("/me", authController.me);
 router.post("/logout", authController.logout);
+router.get("/me", authController.me);
 ```
 
 Parecen completos.
@@ -85,6 +76,8 @@ npm run dev
 ```
 
 3. Ejecuté el register dentro de `api.rest`
+
+Segun este input y output se crearon varios casos de prueba (TC) para `postman` y se encontraron posibles outputs.
 
 Input:
 
@@ -109,15 +102,29 @@ Output:
 }
 ```
 
-
-
-4. 
+4. Lo mismo para login, logout y me
 
 ### 3. Migrar cada función para que utilice la API real.
 
-Cada funcion dentro de auth.service.ts debe ser migrada para que utilice la API real.
+En el FRONTEND.
+
+Estas funciones no usan el API porque parecen haber endpoints para cada una en el BACKEND.
+
+```text
+login() -- Retorna un new Promise
+└── setSessionCookie()
+
+signup() -- Retorna un new Promise.
+└── setSessionCookie()
+
+logout() -- Solo restaura y elimina una cookie que parece de sesión pero parece hacer más según el endpoint del BACKEND.
+```
+
+
 
 ### 4. Eliminar o refactorizar funciones temporales que ya no sean necesarias.
+
+
 
 ### 5. Probar los flujos de autenticación en el frontend.
 
